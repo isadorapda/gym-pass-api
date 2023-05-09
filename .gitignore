@@ -1,0 +1,11 @@
+# Dependencies
+node_modules
+
+# Environment Variable
+.env
+
+# Build
+build
+
+.DS_Store
+
