@@ -7,5 +7,8 @@ node_modules
 # Build
 build
 
+# test
+coverage
+
 .DS_Store
 
