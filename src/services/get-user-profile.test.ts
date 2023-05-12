@@ -1,5 +1,5 @@
 import { test, describe, expect, beforeEach } from 'vitest'
-import { GetUserProfile } from './getUserProfile.service'
+import { GetUserProfile } from './get-user-profile.service'
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository'
 import { hash } from 'bcryptjs'
 import { ResourceNotFound } from './errors/resource-not-found-error'
