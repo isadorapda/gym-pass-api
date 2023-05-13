@@ -12,7 +12,7 @@ GymPass app
 - [ ] User is able to search for gyms by name
 - [x] User is able to check-in in a gym
 - [ ] Validate an user check-in
-- [ ] Able to register a new gym
+- [x] Able to register a new gym
 
 # Business Requirements
 
