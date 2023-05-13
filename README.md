@@ -7,7 +7,7 @@ GymPass app
 - [x] User is able to create an account/ sign in
 - [x] User is able to log in / authenticate
 - [x] User is able to create/access their profile
-- [ ] User is able to access information on their gym check-in history/frequency
+- [x] User is able to access information on their gym check-in history/frequency
 - [ ] User is able to search for nearby gyms
 - [ ] User is able to search for gyms by name
 - [x] User is able to check-in in a gym
@@ -27,5 +27,5 @@ GymPass app
 
 - [x] User's password must be encrypted
 - [x] Data must be persisted in a PostgreSQL database
-- [ ] All datasets must be paginated with 20 items per page
+- [x] All datasets must be paginated with 20 items per page
 - [ ] User must be identified by a jwt
