@@ -29,7 +29,7 @@ export class CheckInService {
     userLongitude,
   }: CheckInServiceRequest): Promise<CheckInServiceResponse> {
     const gym = await this.gymsRepository.findById(gymId)
-    console.log('GYM', gym)
+
     if (!gym) {
       throw new ResourceNotFound()
     }
