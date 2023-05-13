@@ -9,7 +9,7 @@ GymPass app
 - [x] User is able to create/access their profile
 - [x] User is able to access information on their gym check-in history/frequency
 - [ ] User is able to search for nearby gyms
-- [ ] User is able to search for gyms by name
+- [x] User is able to search for gyms by name
 - [x] User is able to check-in in a gym
 - [ ] Validate an user check-in
 - [x] Able to register a new gym
