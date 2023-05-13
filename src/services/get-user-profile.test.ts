@@ -1,16 +1,16 @@
 import { test, describe, expect, beforeEach } from 'vitest'
-import { GetUserProfile } from './get-user-profile.service'
+import { GetUserProfileService } from './get-user-profile.service'
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository'
 import { hash } from 'bcryptjs'
 import { ResourceNotFound } from './errors/resource-not-found-error'
 
 let usersRepository: InMemoryUsersRepository
-let sut: GetUserProfile
+let sut: GetUserProfileService
 
 describe('Get user profile service', () => {
   beforeEach(() => {
     usersRepository = new InMemoryUsersRepository()
-    sut = new GetUserProfile(usersRepository)
+    sut = new GetUserProfileService(usersRepository)
   })
 
   test('User should be able to access profile', async () => {
