@@ -1,8 +1,8 @@
-import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
 import { test, expect, describe, beforeEach, afterEach, vi } from 'vitest'
-import { CheckInService } from './check-in.service'
-import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository'
 import { Decimal } from '@prisma/client/runtime/library'
+import { CheckInService } from './check-in.service'
+import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
+import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository'
 
 let checkInRepository: InMemoryCheckInsRepository
 let gymsRepository: InMemoryGymsRepository
@@ -15,12 +15,12 @@ describe('Check ins services', () => {
     sut = new CheckInService(checkInRepository, gymsRepository)
 
     gymsRepository.gyms.push({
-      id: "gym-id-01'",
+      id: 'gym-id-01',
       gym_name: 'JavaScript Gym',
       description: '',
       phone: '',
-      latitude: new Decimal(0),
-      longitude: new Decimal(0),
+      latitude: new Decimal(51.504425),
+      longitude: new Decimal(-0.1291608),
     })
     vi.useFakeTimers()
   })
@@ -79,5 +79,25 @@ describe('Check ins services', () => {
     })
 
     expect(checkIn.id).toEqual(expect.any(String))
+  })
+
+  test('User should not be able to check in when distant from the gym', async () => {
+    gymsRepository.gyms.push({
+      id: 'gym-02',
+      description: '',
+      gym_name: 'Node Gym',
+      latitude: new Decimal(51.476214),
+      longitude: new Decimal(-0.0565259),
+      phone: '',
+    })
+
+    await expect(() =>
+      sut.service({
+        userId: 'user-id-01',
+        gymId: 'gym-02',
+        userLatitude: 51.504425,
+        userLongitude: -0.1291608,
+      }),
+    ).rejects.toBeInstanceOf(Error)
   })
 })
