@@ -32,7 +32,7 @@ export async function checkInController(
     userLongitude: longitude,
   })
 
-  return reply.status(200).send({
+  return reply.status(201).send({
     checkIn,
   })
 }
