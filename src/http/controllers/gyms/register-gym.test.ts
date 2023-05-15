@@ -13,7 +13,7 @@ describe('Register Gym Controller (E2E)', () => {
   })
 
   test('Should be able to register a gym', async () => {
-    const { token } = await createAndAuthenticateUser(app)
+    const { token } = await createAndAuthenticateUser(app, true)
 
     const gym = await request(app.server)
       .post('/gyms')

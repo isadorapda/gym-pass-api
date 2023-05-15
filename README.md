@@ -20,12 +20,12 @@ GymPass app
 - [x] User is not allowed to check-in more than once in the same day even in different gyms
 - [x] User is not allowed to check-in if they are more than 100m away from the selected gym
 - [x] Validation should happen up to 20 min after checking-in
-- [ ] Validation is processed only by manager staff
-- [ ] Only managers can register a new gym
+- [x] Validation is processed only by manager staff
+- [x] Only managers can register a new gym
 
 # Non-functional Requirements
 
 - [x] User's password must be encrypted
 - [x] Data must be persisted in a PostgreSQL database
 - [x] All datasets must be paginated with 20 items per page
-- [ ] User must be identified by a jwt
+- [x] User must be identified by a jwt
